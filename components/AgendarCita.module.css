@@ -1,0 +1,102 @@
+.section {
+  background:
+    radial-gradient(700px 400px at 10% 0%, rgba(140, 199, 173, 0.25), transparent 70%),
+    var(--green-900);
+  color: var(--green-100);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.tagLight { background: rgba(140, 199, 173, 0.18); color: var(--green-300); }
+
+.intro h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin: 18px 0 14px;
+}
+
+.intro p { color: rgba(230, 242, 236, 0.8); font-size: 1.05rem; margin: 0 0 28px; max-width: 30em; }
+
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+
+.steps li { display: flex; align-items: center; gap: 14px; font-weight: 500; color: var(--white); }
+
+.steps span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--green-500);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.card {
+  background: var(--white);
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+}
+
+.formTitle {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--green-900);
+  margin: 0 0 20px;
+}
+
+.waIcon { width: 20px; height: 20px; }
+
+.legal { text-align: center; font-size: 0.8rem; color: var(--muted); margin: 12px 0 0; }
+
+.success { text-align: center; padding: 16px 0; }
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--green-100);
+  color: var(--green-500);
+  animation: pop 0.4s ease-out;
+}
+.successIcon svg { width: 32px; height: 32px; }
+
+.success h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.6rem;
+  color: var(--green-900);
+  margin: 0 0 8px;
+}
+
+.success p { color: var(--muted); margin: 0 auto 24px; max-width: 30em; }
+
+.successActions { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 480px) {
+  .card { padding: 24px 18px; border-radius: 16px; }
+}

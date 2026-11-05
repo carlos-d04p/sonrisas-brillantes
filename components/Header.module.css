@@ -1,0 +1,112 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 6px 20px -16px rgba(18, 53, 42, 0.4);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: var(--header-h);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green-900);
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logo strong { font-weight: 700; color: var(--green-500); }
+
+.logoIcon { width: 28px; height: 28px; color: var(--green-500); flex-shrink: 0; }
+
+.nav { display: flex; gap: 28px; }
+
+.link {
+  color: var(--green-900);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: var(--green-500);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.link:hover { color: var(--green-500); }
+.link:hover::after { transform: scaleX(1); }
+
+.actions { display: flex; align-items: center; gap: 8px; }
+
+.toggle {
+  display: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--green-900);
+  cursor: pointer;
+}
+
+.toggle svg { width: 22px; height: 22px; }
+
+@media (max-width: 900px) {
+  .toggle { display: grid; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px 16px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 30px -20px rgba(18, 53, 42, 0.4);
+  }
+
+  .navOpen { display: flex; }
+
+  .link { padding: 12px 8px; border-bottom: 1px solid var(--line); }
+  .link:last-child { border-bottom: 0; }
+  .link::after { display: none; }
+}
+
+@media (max-width: 400px) {
+  .logo { font-size: 0.95rem; gap: 6px; }
+  .logoIcon { width: 24px; height: 24px; }
+}
+
+@media (max-width: 350px) {
+  .actions :global(.btn) { display: none; }
+}

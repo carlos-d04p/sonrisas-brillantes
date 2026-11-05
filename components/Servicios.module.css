@@ -1,0 +1,23 @@
+.card {
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sm);
+  border-color: var(--green-300);
+}
+
+.cta {
+  text-align: center;
+  margin: 40px 0 0;
+  color: var(--muted);
+}
+
+.cta a {
+  color: var(--green-700);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta a:hover { text-decoration: underline; }
